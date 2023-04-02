@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block content %}
+    <h1>Hello, world!</h1>
+    <div>
+        {% for x in obj %}
+        {{x.name}}
+        {{x.des}}
+        {% endfor %}
+    </div>
+{% endblock content %}
