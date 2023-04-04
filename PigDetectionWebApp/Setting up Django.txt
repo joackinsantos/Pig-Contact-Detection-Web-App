@@ -6,14 +6,14 @@
 
 *Create a Django app: A Django project can contain multiple apps, each of which handles a specific aspect of the project. To create a new app, navigate to the root directory of your project and type python manage.py startapp appname, where appname is the name of your app.
 
-Define models: Models are the building blocks of a Django app, and they define the data structure of your application. You can define models in the models.py file of your app.
+*Define models: Models are the building blocks of a Django app, and they define the data structure of your application. You can define models in the models.py file of your app.
 
-Create database tables: Once you have defined your models, you can create database tables based on those models using the python manage.py migrate command.
+*Create database tables: Once you have defined your models, you can create database tables based on those models using the python manage.py migrate command.
 
-Define URLs: URLs determine how incoming requests are handled by your app. You can define URLs in the urls.py file of your app.
+*Define URLs: URLs determine how incoming requests are handled by your app. You can define URLs in the urls.py file of your app.
 
-Define views: Views are the functions that handle incoming requests and return responses. You can define views in the views.py file of your app.
+*Define views: Views are the functions that handle incoming requests and return responses. You can define views in the views.py file of your app.
 
-Define templates: Templates are used to render HTML pages that are sent back to the client. You can define templates in the templates directory of your app.
+*Define templates: Templates are used to render HTML pages that are sent back to the client. You can define templates in the templates directory of your app.
 
-Start the development server: Finally, you can start the Django development server by running the python manage.py runserver command. This will start the server on your local machine, and you can view your app in a web browser by navigating to http://localhost:8000.
+*Start the development server: Finally, you can start the Django development server by running the python manage.py runserver command. This will start the server on your local machine, and you can view your app in a web browser by navigating to http://localhost:8000.
