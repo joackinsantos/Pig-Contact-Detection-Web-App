@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from PCD_app.views import *
-
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home, name="home")
+    path("", home, name="home"),
+    path("upload/", upload, name="upload"),
+    path("results/", results, name="results"),
+    path("test/", test, name="test"),
 ]

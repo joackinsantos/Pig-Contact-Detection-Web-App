@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href={% static 'css/home.css' %}>
+<link rel="stylesheet" href={% static 'css/common.css' %}>
+heyheyehyehyehy
+<h1>Hello, world!</h1>
+<div>
+    {% for x in obj %}
+    {{x.name}}
+    {{x.des}}
+    {% endfor %}
+</div>
+
+<button onclick="document.getElementById('uploadImage').click()">Upload Image</button>
+    <div id="imagePreview"></div>
+	<input type="file" id="uploadImage" style="display:none;" onchange="displayImage(event)">
+
+	
+
+	<script>
+		function displayImage(event) {
+			var image = document.getElementById('imagePreview');
+			image.innerHTML = '';
+			var file = event.target.files[0];
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var img = document.createElement('img');
+				img.src = event.target.result;
+				image.appendChild(img);
+			}
+			reader.readAsDataURL(file);
+		}
+	</script>
+
+<!-- divide -->
+
+<div id="image-wrapper"></div>
+<input id="upload-image" type="file" accept=".jpg"/>
+<input id="subbut" type="submit" value="Submit"/>
+
+<script>
+var _URL = window.URL || window.webkitURL;
+
+$("#subbut").click(function () {
+    var file;
+    var image;
+    if ((file = $("#upload-image")[0].files[0])) {
+        image = new Image();
+        image.onload = function () {
+            $("#image-wrapper").append(this);
+            $(this).attr("id", "image");
+        }
+        image.src = _URL.createObjectURL(file);
+    }
+});
+</script>
+{% endblock content %}

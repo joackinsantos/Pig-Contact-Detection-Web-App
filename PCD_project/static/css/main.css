@@ -1,0 +1,83 @@
+body {
+    overflow-x: hidden;
+}
+.main-div{
+    background-color: #ecf5f1;
+    font-family: 'Lato', sans-serif !important;
+    font-weight:normal;
+    padding:0;
+}
+
+.upload-div{
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+.upload-button{
+    font-size:medium;
+}
+
+.upload-image{
+    width: 500px;
+    height: auto;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.btn{
+    border: none;
+    border-radius: 20px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-weight: bold;
+    background-color: #047675;
+    box-shadow:0px 3px 2px rgb(85, 85, 85);
+}
+.btn:hover{
+    background-color: #036260;
+}
+
+.head-text{
+    font-size: 18px;
+}
+
+.upload-helper{
+    font-size: small;
+}
+
+.circle {
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #047675;
+    text-align: center;
+    background: white;
+    box-shadow:0px 2px 2px rgb(85, 85, 85);
+}
+
+.seg-text{
+    font-size: 15px;
+}
+
+.description-div{
+    background-color: #ccd9d3;
+}
+
+.pig-icon-gray{
+    width: 80px;
+    height: auto;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.description-text{
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.description-foottext{
+    font-size: small;
+}
+
