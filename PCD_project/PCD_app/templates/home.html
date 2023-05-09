@@ -8,11 +8,17 @@
         <div class="upload-text-container d-flex justify-content-center mx-3 mt-4 mb-2">
             <p class="upload-text head-text">Detect head-to-rear contact between pigs</p>
         </div>
-        <div class="upload-button-container d-flex justify-content-center mt-5">
-            <button type="button" class="upload-button btn btn-primary container-fluid text-uppercase">
-                <i class="fa-solid fa-plus mr-2"></i>UPLOAD IMAGE
-            </button>
-        </div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="upload-button-container d-flex flex-column justify-content-center mt-5">
+                <div class="custom-file custom-file-button mb-2">
+                    <input class="form-control form-control-lg" type="file" Required name="image" />
+                </div>
+                <button type="submit" class="upload-button btn btn-primary container-fluid text-uppercase mt-2">
+                    <i class="fa-solid fa-plus mr-2"></i>UPLOAD IMAGE
+                </button>
+                {% csrf_token %}
+            </div>
+        </form>
         <div class="upload-helper-container d-flex justify-content-center">
             <p class="upload-helper mt-1">
                 please upload images in PNG format

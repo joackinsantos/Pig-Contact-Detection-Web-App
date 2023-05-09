@@ -6,3 +6,6 @@ class NameTester(models.Model):
     des=models.TextField()
     def __str__(self) -> str:
         return super().__str__()
+    
+class UploadImage(models.Model):
+    image = models.ImageField(upload_to='pig-images/', null=True, blank=True)  

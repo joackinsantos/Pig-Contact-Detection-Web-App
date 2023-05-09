@@ -55,4 +55,11 @@ $("#subbut").click(function () {
     }
 });
 </script>
+
+<form action="display_image.html" method="post" enctype="multipart/form-data">
+    <label for="imageUpload">Upload Image:</label>
+    <input type="file" id="imageUpload" name="imageUpload">
+    <br>
+    <input type="submit" value="Submit">
+</form>
 {% endblock content %}
