@@ -22,16 +22,16 @@ def home(request):
     return render(request, 'home.html')
 
 def upload(request):
-    obj = NameTester.objects.all()
+    images = UploadImage.objects.all().last()
     data = {
-        'obj':obj,
+        'images':images,
     }
     return render(request, 'upload.html', data)
 
 def results(request):
-    obj = NameTester.objects.all()
+    images = UploadImage.objects.all().last()
     data = {
-        'obj':obj,
+        'images':images,
     }
     return render(request, 'results.html', data)
 

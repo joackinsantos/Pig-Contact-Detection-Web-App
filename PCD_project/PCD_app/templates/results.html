@@ -8,15 +8,36 @@
         <div class="upload-text-container d-flex justify-content-center mx-3 mt-4 mb-2">
             <p class="upload-text head-text">Detect head-to-rear contact between pigs</p>
         </div>
-        <div class="upload-button-container d-flex justify-content-center mt-5">
-            <button type="button" class="upload-button btn btn-primary container-fluid text-uppercase">
-                <i class="fa-solid fa-plus mr-2"></i>UPLOAD IMAGE
-            </button>
+        <div class="upload-image-container d-flex justify-content-center">
+            <!-- Placeholder for images -->
+            <img class="upload-image" src="{{ images.image.url }}" alt="default">
         </div>
-        <div class="upload-helper-container d-flex justify-content-center">
-            <p class="upload-helper mt-1">
-                please upload images in PNG format
-            </p>
+        <!-- Results segment-->
+        <div class="results-container container mt-3 px-5 font-weight-bold">
+            <div class="row text-center">
+              <div class="col results-box-1 mr-1 text-uppercase py-2">
+                Classification
+              </div>
+              <div class="col results-box-2 py-2">
+                <!-- Placeholder for results -->
+                With Contact
+              </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col results-box-1 mr-1 text-uppercase py-2">
+                    Contact Count
+                  </div>
+                <div class="col results-box-2 py-2">
+                    <!-- Placeholder for results -->
+                    3
+                </div>
+            </div>
+          </div>
+        <!-- Results segment -->
+        <div class="upload-button-container d-flex justify-content-center mt-3">
+            <a href={% url 'home' %} type="button" class="upload-button btn btn-primary text-uppercase">
+                <i class="fa-solid fa-house-chimney mr-2"></i>HOME
+            </a>
         </div>
     </div>
     <div class="how-div">

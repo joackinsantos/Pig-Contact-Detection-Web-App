@@ -9,17 +9,12 @@
             <p class="upload-text head-text">Detect head-to-rear contact between pigs</p>
         </div>
         <div class="upload-image-container d-flex justify-content-center">
-            <img class="upload-image" src={% static 'image/default-image.jpg' %} alt="default">
+            <img class="upload-image" src="{{ images.image.url }}" alt="default">
         </div>
         <div class="upload-button-container d-flex justify-content-center mt-5">
-            <button type="button" class="upload-button btn btn-primary container-fluid text-uppercase">
-                <i class="fa-solid fa-plus mr-2"></i>UPLOAD IMAGE
-            </button>
-        </div>
-        <div class="upload-helper-container d-flex justify-content-center">
-            <p class="upload-helper mt-1">
-                please upload images in PNG format
-            </p>
+            <a href={% url 'results' %} type="button" class="upload-button btn btn-primary container-fluid text-uppercase">
+                SUBMIT AND PROCESS
+            </a>
         </div>
     </div>
     <div class="how-div">
@@ -64,4 +59,5 @@
         <div class="description-foottext p-2 mt-2 mb-5 text-uppercase">PIG CONTACT DETECTION MODEL</div>
     </div>
 </div>
+
 {% endblock content %}
