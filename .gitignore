@@ -2,6 +2,7 @@
 */.pyc
 *.pyd
 *.dll
+pyvenv/
 
 # Ignore created images
 *.jpg
