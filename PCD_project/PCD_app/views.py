@@ -42,11 +42,11 @@ def results(request):
     img = im.open(io.BytesIO(img_bytes))
 
     # we get these remotely through github
-    path_hubconfig = "joackinsantos/YOLOv5-Modification:website-integration"
+    path_hubconfig = "../YOLOv5-Modification"
     path_weightfile = "../best-weight/test.pt"
 
     model = torch.hub.load(path_hubconfig, 'custom',
-                           path=path_weightfile, source='github',
+                           path=path_weightfile, source='local',
                            force_reload=True)
     
     results = model(img, size=400)
