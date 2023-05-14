@@ -1,8 +1,4 @@
 # Ignore compiled Python files and DLLs
-*\.pyc
-*.pyd
-*.dll
-pyvenv\
 pigvenv/
 
 # Ignore created images
