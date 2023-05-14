@@ -37,6 +37,10 @@ def upload(request):
     print(image)
     return render(request, 'upload.html', data)
 
+# Use this to modify Contact Detection Performance
+model_weight = 'test.pt'
+threshold_value = 0.05
+
 # IMAGE DETECTION AND INTERACTION
 def results(request):
     # GET UPLOADED IMAGE
@@ -48,11 +52,11 @@ def results(request):
     # LOADING THE MODEL (can be loaded remotely)
     # path_hubconfig = "joackinsantos/YOLOv5-Modification:website-integration"
     path_hubconfig = "YOLOv5-Modification"
-    path_weightfile = "best-weights/test.pt"
+    path_weightfile = f"best-weights/{model_weight}"
     model = torch.hub.load(path_hubconfig, 'custom',
                            path=path_weightfile, source='local',
                            force_reload=True)
-    results = model(img, size=400)
+    results = model(img, size=600)
 
     # PROCESSING DETECTED IMAGE
     # remove previous detected image directory to save space
@@ -74,7 +78,7 @@ def results(request):
     ## INTERACTION METHOD
     # bb = bounding box
     bb = results.pandas().xyxy[0]
-    iou_threshold = 0.07
+    iou_threshold = threshold_value
     results_df = pd.DataFrame(columns=['Classification', 'Interaction_Count'])
     interaction_flag = False
     interaction_count = 0
@@ -102,6 +106,7 @@ def results(request):
             curr_iou = compute_iou(head_minX, head_maxX, head_minY, head_maxY,
                         rear_minX, rear_maxX, rear_minY, rear_maxY)
             
+            # print(curr_iou)
             if(curr_iou >= iou_threshold):
                 interaction_flag = True
                 interaction_count += 1
