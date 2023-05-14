@@ -1,2 +1,0 @@
-replace with best model (weight)
-test.pt is from aug_mid_m_400_8_50
