@@ -1,2 +1,7 @@
+# Ignore compiled Python files and DLLs
 *.pyc
+*.pyd
+*.dll
+
+# Ignore created images
 *.jpg
