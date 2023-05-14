@@ -3,7 +3,7 @@
 *.pyd
 *.dll
 pyvenv\
-pigvenv\
+pigvenv/
 
 # Ignore created images
 *.jpg
