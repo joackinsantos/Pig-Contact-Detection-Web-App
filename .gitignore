@@ -1,4 +1,4 @@
-# Ignore compiled Python files and DLLs
+# Ignore environment
 pigvenv/
 
 # Ignore created images
