@@ -13,16 +13,8 @@ from django.contrib import messages
 from django.views.generic.edit import CreateView
 from .models import *
 
-# Create your views here.
-# def home(request):
-#     obj = NameTester.objects.all()
-#     data = {
-#         'obj':obj,
-#     }
-#     return render(request, 'home.html', data)
-
-class ProcessImage(CreateView):
-    print("hello")
+# class ProcessImage(CreateView):
+#     print("hello")
 
 def home(request):
     if request.method == "POST":
@@ -36,17 +28,26 @@ def home(request):
     return render(request, 'home.html')
 
 def upload(request):
-    images = UploadImage.objects.all().last()
+    image = UploadImage.objects.all().last()
     data = {
-        'images':images,
+        'images':image,
     }
     return render(request, 'upload.html', data)
 
+# this is where image detection and interaction happens
 def results(request):
-    images = UploadImage.objects.all().last()
+    # getting the image
+    image = UploadImage.objects.all().last()
+    img_bytes = image.image.read()
+    img = im.open(io.BytesIO(img_bytes))
+
     data = {
-        'images':images,
+        'image':image,
     }
+
+
+
+
     return render(request, 'results.html', data)
 
 def test(request):
