@@ -9,8 +9,7 @@
             <p class="upload-text head-text">Detect head-to-rear contact between pigs</p>
         </div>
         <div class="upload-image-container d-flex justify-content-center">
-            <!-- Placeholder for images -->
-            <img class="upload-image" src="{{ image.image.url }}" alt="default">
+            <img class="upload-image" src="{{ image }}" alt="default">
         </div>
         <!-- Results segment-->
         <div class="results-container container mt-3 px-5 font-weight-bold">
@@ -19,8 +18,7 @@
                 Classification
               </div>
               <div class="col results-box-2 py-2">
-                <!-- Placeholder for results -->
-                With Contact
+                {{ class }}
               </div>
             </div>
             <div class="row mt-1">
@@ -28,8 +26,7 @@
                     Contact Count
                   </div>
                 <div class="col results-box-2 py-2">
-                    <!-- Placeholder for results -->
-                    3
+                    {{ interaction_count }}
                 </div>
             </div>
           </div>
