@@ -30,7 +30,7 @@ def home(request):
 def upload(request):
     image = UploadImage.objects.all().last()
     data = {
-        'images':image,
+        'image':image,
     }
     return render(request, 'upload.html', data)
 
@@ -41,12 +41,25 @@ def results(request):
     img_bytes = image.image.read()
     img = im.open(io.BytesIO(img_bytes))
 
+    path_hubconfig = "joackinsantos/YOLOv5-Modification"
+    path_weightfile = "../best-weights/test.pt"
+
+    model = torch.hub.load(path_hubconfig, 'custom',
+                           path=path_weightfile, source='github',
+                           force_reload=True)
+    
+    results = model(img, size=400)
+    results.render()
+
+    for img in results.imgs:
+        img_base = im.fromarray(img)
+        img_base.save("pig-images/yolo_out/image0.jpg", format="JPEG")
+    
+    inference_img = "pig-images/yolo_out/image0.jpg"
+
     data = {
-        'image':image,
+        'image':inference_img,
     }
-
-
-
 
     return render(request, 'results.html', data)
 
