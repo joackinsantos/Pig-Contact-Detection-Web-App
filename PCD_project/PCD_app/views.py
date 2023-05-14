@@ -41,8 +41,9 @@ def results(request):
     img_bytes = image.image.read()
     img = im.open(io.BytesIO(img_bytes))
 
-    path_hubconfig = "joackinsantos/YOLOv5-Modification"
-    path_weightfile = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'best-weights', 'test.pt')
+    # we get these remotely through github
+    path_hubconfig = "joackinsantos/YOLOv5-Modification:website-integration"
+    path_weightfile = "../best-weight/test.pt"
 
     model = torch.hub.load(path_hubconfig, 'custom',
                            path=path_weightfile, source='github',
