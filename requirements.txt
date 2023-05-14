@@ -1,0 +1,10 @@
+django==4.1.7
+numpy==1.24.2
+pandas==1.5.3
+psycopg2==2.9.5
+pylint-django==2.5.3
+pillow==9.5.0
+torch==2.0.1
+scikit-learn==1.2.2
+matplotlib==3.7.1
+seaborn==0.12.2
