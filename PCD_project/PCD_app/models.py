@@ -1,11 +1,15 @@
+import os
+
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
-class NameTester(models.Model):
-    name=models.CharField(max_length=100)
-    des=models.TextField()
-    def __str__(self) -> str:
-        return super().__str__()
-    
 class UploadImage(models.Model):
-    image = models.ImageField(upload_to='pig-images/', null=True, blank=True)  
+    image = models.ImageField(_("image"),upload_to='pig-images/', null=True, blank=True)  
+
+    class Meta:
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
+
+    def __str__(self):
+        return str(os.path.split(self.image.path)[-1])

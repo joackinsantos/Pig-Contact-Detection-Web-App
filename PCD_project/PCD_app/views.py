@@ -1,5 +1,16 @@
+import io
+import os
+import torch
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from PIL import Image as im
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.views.generic.edit import CreateView
 from .models import *
 
 # Create your views here.
@@ -9,6 +20,9 @@ from .models import *
 #         'obj':obj,
 #     }
 #     return render(request, 'home.html', data)
+
+class ProcessImage(CreateView):
+    print("hello")
 
 def home(request):
     if request.method == "POST":
@@ -36,8 +50,4 @@ def results(request):
     return render(request, 'results.html', data)
 
 def test(request):
-    obj = NameTester.objects.all()
-    data = {
-        'obj':obj,
-    }
-    return render(request, 'test.html', data)
+    return render(request, 'test.html')
