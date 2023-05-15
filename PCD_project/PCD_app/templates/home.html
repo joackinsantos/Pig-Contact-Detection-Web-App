@@ -11,7 +11,7 @@
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="upload-button-container d-flex flex-column justify-content-center mt-5">
                 <div class="custom-file custom-file-button mb-2">
-                    <input class="form-control form-control-lg" type="file" Required name="image" />
+                    <input id="fileInput" class="form-control form-control-lg" type="file" Required name="image" />
                 </div>
                 <button type="submit" class="upload-button btn btn-primary container-fluid text-uppercase mt-2">
                     <i class="fa-solid fa-plus mr-2"></i>UPLOAD IMAGE
@@ -21,7 +21,7 @@
         </form>
         <div class="upload-helper-container d-flex justify-content-center">
             <p class="upload-helper mt-1">
-                please upload images in PNG format
+                please upload images only
             </p>
         </div>
     </div>
@@ -67,13 +67,4 @@
         <div class="description-foottext p-2 mt-2 mb-5 text-uppercase">PIG CONTACT DETECTION MODEL</div>
     </div>
 </div>
-
-<script defer>
-    $(document).ready(function() {
-      $("button").click(function(){
-        $("button").removeClass("active");
-        $(this).addClass("active");
-      });
-    });
-</script>
 {% endblock content %}

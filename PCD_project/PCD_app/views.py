@@ -9,21 +9,31 @@ import matplotlib.pyplot as plt
 from PIL import Image as im
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
-
+from django.core.exceptions import *
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.generic.edit import CreateView
 from .models import *
 
-# class ProcessImage(CreateView):
-#     print("hello")
 
 def home(request):
+
     if request.method == "POST":
         image = UploadImage()
         if len(request.FILES) != 0:
             image.image = request.FILES['image']
+            filename = image.image.name
 
+            if image.image.size > 5*1024*1024:
+                # raise ValidationError('File size too large.')
+                print("File size too large.")
+                return render(request, 'home.html')
+            elif not filename.lower().endswith(('.jpg', '.jpeg', '.png')):
+                # raise ValidationError('File is not an image.')
+                print("File is not an image.")
+                return render(request, 'home.html')
+            else:
+                image.save()
         image.save()
         messages.success(request, "Image Uploaded!")
         return redirect('upload/')
