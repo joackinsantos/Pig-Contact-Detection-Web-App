@@ -9,9 +9,3 @@ class UploadImage(models.Model):
 
     def __str__(self):
         return str(os.path.split(self.image.path)[-1])
-
-class DetectedImage(models.Model):
-    image = models.ImageField(_("detected-image"),upload_to='detect-images/', null=True, blank=True)  
-
-    def __str__(self):
-        return str(os.path.split(self.image.path)[-1])

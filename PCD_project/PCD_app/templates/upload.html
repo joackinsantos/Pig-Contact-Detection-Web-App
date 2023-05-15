@@ -60,4 +60,13 @@
     </div>
 </div>
 
+<script defer>
+    $(document).ready(function() {
+      $("button").click(function(){
+        $("button").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+</script>
+
 {% endblock content %}
