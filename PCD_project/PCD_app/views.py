@@ -48,8 +48,11 @@ def upload(request):
     return render(request, 'upload.html', data)
 
 # Use this to modify Contact Detection Performance
-model_weight = 'test.pt'
+# model (img_size, threshold_value)
+# aug_mid_m_600_8_100 (500, 0.05)
+model_weight = 'aug_mid_m_600_8_100.pt'
 threshold_value = 0.05
+img_size = 500
 
 # IMAGE DETECTION AND INTERACTION
 def results(request):
@@ -66,7 +69,7 @@ def results(request):
     model = torch.hub.load(path_hubconfig, 'custom',
                            path=path_weightfile, source='local',
                            force_reload=True)
-    results = model(img, size=600)
+    results = model(img, size=img_size)
 
     # PROCESSING DETECTED IMAGE
     # remove previous detected image directory to save space
