@@ -56,7 +56,6 @@ body {
 }
 
 .results-box-2{
-    border: 2px solid #1C8572;
     background-color: #1C8572;
     opacity: 85%;
     color:white;
@@ -85,6 +84,23 @@ body {
     border-color:#036260!important;
 }
 
+.btn-back{
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: #047675;
+    box-shadow:0px 3px 2px rgb(85, 85, 85);
+}
+.btn-back:hover{
+    background-color: #036260;
+    color: white;
+}
+.btn-back:active, .open > .dropdown-toggle.btn{
+    background-color: #036260 !important;
+    border-color:#036260!important;
+}
+
 .upload-helper{
     font-size: small;
 }
@@ -98,6 +114,17 @@ body {
     color: #047675;
     text-align: center;
     background: white;
+    box-shadow:0px 2px 2px rgb(85, 85, 85);
+}
+.circle-colored {
+    width: 22px;
+    height: 22px;
+    line-height: 33px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #047675;
+    text-align: center;
+    background:#047675;
     box-shadow:0px 2px 2px rgb(85, 85, 85);
 }
 

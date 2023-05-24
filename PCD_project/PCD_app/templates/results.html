@@ -4,7 +4,7 @@
 <link rel="stylesheet" href={% static 'css/main.css' %}>
 
 <div class="container-fluid main-div d-flex flex-column">
-    <div class="upload-div d-flex flex-column mx-auto">
+    <div class="upload-div d-flex flex-column mx-auto mb-4">
         <div class="upload-text-container d-flex justify-content-center mx-3 mt-4 mb-2">
             <p class="upload-text head-text">Detect head-to-rear contact between pigs</p>
         </div>
@@ -14,69 +14,60 @@
         <!-- Results segment-->
         <div class="results-container container mt-3 px-5 font-weight-bold">
             <div class="row text-center">
-              <div class="col results-box-1 mr-1 text-uppercase py-2">
+              <div class="col results-box-1 mr-1 text-uppercase py-2 align-self-center">
                 Classification
               </div>
-              <div class="col results-box-2 py-2">
+              <div class="col results-box-2 py-2 align-self-center">
                 {{ class }}
               </div>
             </div>
             <div class="row mt-1">
-                <div class="col results-box-1 mr-1 text-uppercase py-2">
+                <div class="col results-box-1 mr-1 text-uppercase py-2 align-self-center">
                     Contact Count
                   </div>
-                <div class="col results-box-2 py-2">
+                <div class="col results-box-2 py-2 align-self-center">
                     {{ interaction_count }}
                 </div>
             </div>
           </div>
         <!-- Results segment -->
-        <div class="upload-button-container d-flex justify-content-center mt-3">
-            <a href={% url 'home' %} type="button" class="upload-button btn btn-primary text-uppercase">
-                <i class="fa-solid fa-house-chimney mr-2"></i>HOME
-            </a>
-        </div>
     </div>
-    <div class="how-div">
-        <div class="how-title container-fluid head-text text-center mb-3 font-weight-bold">
-            How to use the Pig Contact Detection Website Application
-        </div>
-        <div class="container segment-container">
-            <div class="row">
-              <div class="col-sm">
-                <div class="row text-justify pr-1">
-                    <p class="col-0 mt-2 circle">1</p>
-                    <p class="seg-text col p-1 ml-2 mr-4">Click the upload image button and select a pig pen image</p>
-                </div>
+    <hr class="hr hr-blurry" />
+    <div class="how-div mt-3 mb-1">
+      <div class="how-title container-fluid text-center mb-4 font-weight-bold">
+          Making Sense of the Results Above
+      </div>
+      <div class="container segment-container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="row text-justify pr-1">
+                  <p class="col-0 mt-2 circle-colored">1</p>
+                  <p class="seg-text col p-1 ml-2 mr-4">
+                    The <b>Classification</b> result provides two possible values: <b>With Contact</b> and <b>Without Contact.</b>
+                    If the result is <b>With Contact</b>, it indicates that the system has detected instances of head-to-rear 
+                    contact or tail biting in the provided image. Otherwise, if the result is <b>Without Contact</b>, it means 
+                    that no such contact was detected.
+                  </p>
               </div>
-              <div class="col-sm">
-                <div class="row text-justify pr-1">
-                    <p class="col-0 mt-2 circle">2</p>
-                    <p class="seg-text col p-1 ml-2 mr-4">Confirm if the image is correct for system to process for detection</p>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="row text-justify pr-1">
-                    <p class="col-0 mt-2 circle">3</p>
-                    <p class="seg-text col p-1 ml-2 mr-4">The results will show if the image has contact or not and its total count</p>
-                </div>
+            </div>
+            <div class="col-sm">
+              <div class="row text-justify pr-1">
+                  <p class="col-0 mt-2 circle-colored">1</p>
+                  <p class="seg-text col p-1 ml-2 mr-4">
+                    Assuming the classification result indicates <b>With Contact</b>, the <b>Contact Count</b> result represents the total 
+                    number of occurrences of head-to-rear contact or tail biting in the provided image. If there is no contact 
+                    detected, the <b>Contact Count</b> will be zero.
+                  </p>
               </div>
             </div>
           </div>
-    </div>
-    <div class="description-div container-fluid d-flex flex-column justify-content-center text-center">
-        <div class="description-image p-2 mt-3">
-            <img class="pig-icon-gray" src={% static 'image/pig-icon.png' %} alt="pig icon">
         </div>
-        <div class="description-text p-2 text-justify text-wrap mt-2">
-            Tail biting is a significant welfare problem in pig farming where one pig bites the tail of another, 
-            causing harm, pain, and stress in the pen. This can be sign of various issue such as poor living conditions, 
-            health problems, and boredom, which can lead to abnormal behavior. <br><br>
-
-            This web application has been developed to detect head-to-rear contact between pigs in a pen by analyzing 
-            uploaded images. This can help diagnose if tail biting is possibly present in the pen to act as a decision 
-            support tool for medical interventation and maintain welfare in the pig farm.</div>
-        <div class="description-foottext p-2 mt-2 mb-5 text-uppercase">PIG CONTACT DETECTION MODEL</div>
-    </div>
+  </div>
+  <hr class="hr hr-blurry" />
+  <div class="back-button-container d-flex justify-content-center mt-2 mb-4">
+    <a href={% url 'home' %} type="button" class="upload-button btn-back text-uppercase p-2 px-4">
+        <i class="fa-solid fa-house-chimney mr-2"></i>HOME
+    </a>
+  </div>
 </div>
 {% endblock content %}
