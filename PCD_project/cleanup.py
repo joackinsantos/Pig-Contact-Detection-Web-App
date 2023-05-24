@@ -2,7 +2,7 @@ import atexit
 import shutil
 import os
 
-## used for cleanup
+# # used for cleanup
 # detect_path = "./runs/detect"
 # upload_path = "./pig-images"
 

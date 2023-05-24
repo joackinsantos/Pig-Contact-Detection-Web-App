@@ -2,14 +2,19 @@ body {
     overflow-x: hidden;
 }
 .main-div{
-    background-color: #ecf5f1;
-    font-family: 'Lato', sans-serif !important;
+    background-color: white;
+    font-family: 'Reem Kufi Fun', sans-serif !important;
     font-weight:normal;
     padding:0;
 }
 
 .upload-div{
-    margin-top: 10%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.how-div{
+    margin-top: 4%;
     margin-bottom: 3%;
 }
 
@@ -22,11 +27,23 @@ body {
     height: auto;
 }
 
+
 .upload-image{
     width: 550px;
     height: auto;
     border: 7px solid #1C8572;
     box-shadow:0px 3px 2px rgb(85, 85, 85);
+}
+
+.upload-text{
+    background-color: #047675;
+    font-size: 20px;
+    color:white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 75px;
+    padding-right: 75px;
+    border-radius: 5px;
 }
 
 .results-box-1{
@@ -50,6 +67,7 @@ body {
 }
 
 .btn{
+    color: white;
     border: none;
     border-radius: 15px;
     padding-top: 4%;
@@ -60,14 +78,11 @@ body {
 }
 .btn:hover{
     background-color: #036260;
+    color: white;
 }
 .btn:active, .open > .dropdown-toggle.btn{
     background-color: #036260 !important;
     border-color:#036260!important;
-}
-
-.head-text{
-    font-size: 18px;
 }
 
 .upload-helper{
@@ -86,26 +101,87 @@ body {
     box-shadow:0px 2px 2px rgb(85, 85, 85);
 }
 
+.how-title{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
 .seg-text{
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .description-div{
-    background-color: #ccd9d3;
+    background-color: #ecf5f1;
 }
 
-.pig-icon-gray{
-    width: 80px;
+.description-margin{
+    margin-left: 12%;
+    margin-right: 12%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.pig-home{
+    width: 375px;
     height: auto;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    border-radius: 50%;
+    box-shadow:0px 5px 10px rgb(85, 85, 85);
+    /* -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0
+    filter: grayscale(100%); */
+}
+
+.description-logo{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.description-title{
+    background-color: #047675;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.title-accompany{
+    background-color: #20937F;
+    color: white;
+    font-size: large;
+    -webkit-mask-image: -webkit-gradient(linear, center top, center bottom, 
+			color-stop(0.75,  rgba(0,0,0,1)),
+			color-stop(1.00,  rgba(0,0,0,0)));
+    mask-image: -webkit-gradient(linear, center top, center bottom, 
+			color-stop(0.75,  rgba(0,0,0,1)),
+			color-stop(1.00,  rgba(0,0,0,0)));
+}
+
+.pig-title-icon{
+    width: 60px;
+    height: auto;
+}
+
+.description-logotext{
+    font-size: larger;
 }
 
 .description-text{
-    margin-left: 12%;
-    margin-right: 12%;
+    font-size: 18px;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .description-foottext{
-    font-size: small;
+    font-size: smaller;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.redirect-button{
+    font-size: 20px;
+    border-radius: 15px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bold;
+    background-color: #047675;
+    box-shadow:0px 3px 2px rgb(85, 85, 85);
 }

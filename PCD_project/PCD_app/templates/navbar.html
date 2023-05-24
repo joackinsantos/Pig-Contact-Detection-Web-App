@@ -4,10 +4,12 @@
 <!-- Navbar Bootstrap -->
 <div class="navbar-container">
     <nav class="navbar navbar-expand-lg navbar-light px-4 py-2 d-flex row">
-        <div class="navbar-icon ml-2 d-flex flex-row">
-            <img class="pig-icon" src={% static 'image/pig-icon.png' %} alt="pig icon">
-            <a class="navbar-brand text-uppercase font-weight-bold text-white ml-2" href={% url 'home' %}>
-                Pig Contact Detection Model
+        <div class="navbar-icon d-flex flex-row justify-content-center">
+            <a  href={% url 'home' %} >
+                <img class="pig-icon"src={% static 'image/pig_icon_2.png' %} alt="pig icon">
+            </a>
+            <a class="navbar-brand font-weight-bold text-white ml-2" href={% url 'home' %}>
+                TailSafe
             </a>
         </div>
     </nav>
