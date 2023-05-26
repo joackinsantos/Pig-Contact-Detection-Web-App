@@ -76,12 +76,25 @@ WSGI_APPLICATION = "PCD_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Local DB
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "pig_contact_detection",
+#         "USER": "pigCD",
+#         "PASSWORD": "pigCD",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "pig_contact_detection",
-        "USER": "pigCD",
-        "PASSWORD": "pigCD",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:d2d31tZGgHE31HblBwmp@containers-us-west-90.railway.app:5644/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'd2d31tZGgHE31HblBwmp',
+        'HOST': 'containers-us-west-90.railway.app',
+        'PORT': 5644,
     }
 }
 
