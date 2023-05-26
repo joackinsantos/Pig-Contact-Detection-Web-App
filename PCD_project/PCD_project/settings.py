@@ -89,12 +89,12 @@ WSGI_APPLICATION = "PCD_project.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:d2d31tZGgHE31HblBwmp@containers-us-west-90.railway.app:5644/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'd2d31tZGgHE31HblBwmp',
-        'HOST': 'containers-us-west-90.railway.app',
-        'PORT': 5644,
+        'URL': os.getenv('POSTGRES_URL'),
+        'NAME': os.getenv('PGNAME'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT'),
     }
 }
 
