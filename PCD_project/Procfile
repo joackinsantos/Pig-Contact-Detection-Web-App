@@ -1,0 +1,1 @@
+web: gunicorn PCD_project.wsgi --log-file -
