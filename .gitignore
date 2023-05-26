@@ -24,7 +24,7 @@ pigvenv/
 *.MOV
 *.avi
 *.data
-*.json
+# *.json
 *.cfg
 !setup.cfg
 !cfg/yolov3*.cfg
