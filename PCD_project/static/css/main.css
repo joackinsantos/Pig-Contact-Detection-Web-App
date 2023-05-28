@@ -85,7 +85,7 @@ body {
 }
 
 .btn-back{
-    color: white;
+    color: white !important;
     border: none;
     border-radius: 15px;
     font-weight: bold;

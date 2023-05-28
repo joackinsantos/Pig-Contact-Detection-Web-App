@@ -55,9 +55,15 @@
     </div>
     <hr class="hr hr-blurry" />
     <div class="back-button-container d-flex justify-content-center mt-2 mb-4">
-      <a href={% url 'home' %} type="button" class="upload-button btn-back text-uppercase p-2 px-4">
+      <a onclick="redirectToMainPage()" type="button" class="upload-button btn-back text-uppercase p-2 px-4">
         <i class="fa-solid fa-arrow-left mr-2"></i>BACK
       </a>
     </div>
 </div>
+
+<script>
+    function redirectToMainPage() {
+      window.location.href = '/#upload-section';
+    }
+</script>
 {% endblock content %}
