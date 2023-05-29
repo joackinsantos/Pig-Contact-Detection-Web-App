@@ -45,12 +45,16 @@
             </p>
         </div>
         <div class="upload-image-container d-flex justify-content-center">
-            <img class="upload-image" src="{{ image.image.url }}" alt="default">
+            <img class="upload-image" src="{{ image.image.url }}" onclick="zoomImage(this)" alt="default">
+            <div class="overlay"></div>
         </div>
         <div class="upload-button-container d-flex justify-content-center mt-5">
-            <a href={% url 'results' %} type="button" class="upload-button btn container-fluid text-uppercase">
-                SUBMIT AND PROCESS
-            </a>
+            <div class="">
+                <a href={% url 'results' %} type="button" class="upload-button btn container-fluid text-uppercase px-5 py-3">
+                    SUBMIT AND PROCESS
+                </a>
+            </div>
+
         </div>
     </div>
     <hr class="hr hr-blurry" />
@@ -64,6 +68,26 @@
 <script>
     function redirectToMainPage() {
       window.location.href = '/#upload-section';
+    }
+    function zoomImage(element) {
+        element.classList.toggle('zoomed');
+        document.body.classList.toggle('darken-page');
+        var overlay = document.querySelector('.overlay');
+        overlay.classList.toggle('show');
+        
+        if (overlay.classList.contains('show')) {
+            overlay.style.opacity = '0.5';
+            overlay.style.zIndex = '1000';
+        } else {
+            overlay.style.opacity = '';
+            overlay.style.zIndex = '';
+        }
+
+        if (element.classList.contains('zoomed')) {
+            element.style.cursor = 'zoom-out';
+        } else {
+            element.style.cursor = '';
+        }
     }
 </script>
 {% endblock content %}

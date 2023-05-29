@@ -9,7 +9,8 @@
             <p class="upload-text head-text">Detect head-to-rear contact between pigs</p>
         </div>
         <div class="upload-image-container d-flex justify-content-center">
-            <img class="upload-image" src="{{ image }}" alt="default">
+            <img class="upload-image" src="{{ image }}" onclick="zoomImage(this)" alt="default">
+            <div class="overlay"></div>
         </div>
         <!-- Results segment-->
         <div class="results-container container mt-3 px-5 font-weight-bold">
@@ -65,9 +66,38 @@
   </div>
   <hr class="hr hr-blurry" />
   <div class="back-button-container d-flex justify-content-center mt-2 mb-4">
-    <a href={% url 'home' %} type="button" class="upload-button btn-back text-uppercase p-2 px-4">
+    <a href={% url 'home' %} type="button" class="upload-button btn-back text-uppercase p-2 px-4 mr-2">
         <i class="fa-solid fa-house-chimney mr-2"></i>HOME
+    </a>
+    <a onclick="redirectToMainPage()" type="button" class="upload-button btn-back text-uppercase p-2 px-4">
+      <i class="fa-solid fa-arrow-left mr-2"></i>DETECT AGAIN
     </a>
   </div>
 </div>
+
+<script>
+  function redirectToMainPage() {
+    window.location.href = '/#upload-section';
+  }
+  function zoomImage(element) {
+        element.classList.toggle('zoomed');
+        document.body.classList.toggle('darken-page');
+        var overlay = document.querySelector('.overlay');
+        overlay.classList.toggle('show');
+        
+        if (overlay.classList.contains('show')) {
+            overlay.style.opacity = '0.5';
+            overlay.style.zIndex = '1000';
+        } else {
+            overlay.style.opacity = '';
+            overlay.style.zIndex = '';
+        }
+
+        if (element.classList.contains('zoomed')) {
+            element.style.cursor = 'zoom-out';
+        } else {
+            element.style.cursor = '';
+        }
+    }
+</script>
 {% endblock content %}
